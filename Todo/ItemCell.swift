@@ -45,7 +45,7 @@ class ItemCell: UITableViewCell, ViewModelType {
         case 2:
             dateString = UpdateTime.TheDayBeforeYesterday
         default:
-            dateFormatter.dateFormat = "yy/MM/dd"
+            dateFormatter.dateFormat = "MM/dd"
             dateString = dateFormatter.stringFromDate(date)
         }
         dateFormatter.dateFormat = "HH:mm"

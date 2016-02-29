@@ -149,9 +149,9 @@
 		20BDB78B1C7EA43E00CD8A53 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				20E0C64F1C7F452D0011BB19 /* ItemStatusEnums.swift */,
 				20AD45711C7E0D5D00253FF4 /* ConstantStructs.swift */,
 				20CF450B1C804284004DDF82 /* DelegateProtocols.swift */,
+				20E0C64F1C7F452D0011BB19 /* ItemStatusEnums.swift */,
 				2078D2BC1C841F04008F73B3 /* SimpleRefreshControl.swift */,
 				2078D2BE1C841F60008F73B3 /* DelayFunction.swift */,
 			);
@@ -496,6 +496,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Todo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sheepy.Todo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -508,6 +509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Todo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sheepy.Todo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
