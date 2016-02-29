@@ -15,4 +15,15 @@ Todo 是一个 iOS 平台的备忘录应用，事项按更新时间排序，支�
 ### 项目结构
 ![项目结构](https://github.com/sheepy1/Todo/raw/master/Pic/project_struct.png)
 
-## 开发
+## 准备
+* 开发工具：Xcode 7.2
+* 运行平台：iOS 8+
+* 双击 Todo.xcworkspace 打开
+
+## 相关技术
+* 语言：Swift 2.1
+* 依赖管理工具：CocoaPods
+* 网络任务：NSURLSession
+* JSON 解析：第三方库 SwiftyJSON
+* 本地缓存：第三方库 RealmSwift
+* UI布局：Storyboard ＋ AutoLayout
