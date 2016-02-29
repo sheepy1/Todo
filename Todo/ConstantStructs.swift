@@ -74,8 +74,10 @@ struct ActionTitle {
     static let Revert = "撤销完成"
 }
 
-struct Alert {
-    static let Suggestion = "操作无法生效，请检查您的网络设置"
+struct AlertMessage {
+    static let Cancel = "好的"
+    static let HTTPSuggestion = "操作无法生效，请检查您的网络设置"
+    static let DataSuggestion = "远程数据变更，请先下拉刷新"
 }
 
 struct QueueName {

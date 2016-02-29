@@ -33,7 +33,7 @@ class ItemManager {
         }
     }
     
-    // MARK: - 查询事项
+    // MARK: - 加载和缓存事项列表
     func loadItemListWithSatusOption(statusOption: ItemStatusOption) {
         switch statusOption {
         case .All:
@@ -57,35 +57,46 @@ class ItemManager {
             delegate.showItemList(sortedItemList)
             
         } else {
-            // 联网获取数据
-            let params = [Key.Token: RequestInfo.Token]
-            httpManager.taskWithURLString(API.List, params: params) { result in
-                // 不能直接用 map，map 是个范型方法，传入闭包的返回类型和参数类型一致
-                var itemList = [Item]()
-                result.arrayValue.forEach {
-                    let item = Item()
-                    item.id = $0[Key.Id].intValue
-                    item.userId = $0[Key.UserId].intValue
-                    item.title = $0[Key.Title].stringValue
-                    item.content = $0[Key.Content].stringValue
-                    item.status = $0[Key.Status].intValue
-                    item.createTime = $0[Key.CreateTime].doubleValue
-                    item.updateTime = $0[Key.UpdateTime].doubleValue
-                    itemList.append(item)
-                }
-                
-                let sortedItemList = itemList.sort {
-                    $0.0.updateTime > $0.1.updateTime
-                }
-                self.delegate.showItemList(sortedItemList)
-                
-                // 存入数据库
-                try! self.realm.write {
-                    self.realm.add(sortedItemList, update: true)
-                }
+            downloadAndCacheItemList()
+        }
+    }
+    
+    func reloadItemList() {
+        try! realm.write {
+            self.realm.deleteAll()
+        }
+        downloadAndCacheItemList()
+    }
+    
+    private func downloadAndCacheItemList() {
+        // 联网获取数据
+        let params = [Key.Token: RequestInfo.Token]
+        httpManager.taskWithURLString(API.List, params: params) { result in
+            // 不能直接用 map，map 是个范型方法，传入闭包的返回类型和参数类型一致
+            var itemList = [Item]()
+            result.arrayValue.forEach {
+                let item = Item()
+                item.id = $0[Key.Id].intValue
+                item.userId = $0[Key.UserId].intValue
+                item.title = $0[Key.Title].stringValue
+                item.content = $0[Key.Content].stringValue
+                item.status = $0[Key.Status].intValue
+                item.createTime = $0[Key.CreateTime].doubleValue
+                item.updateTime = $0[Key.UpdateTime].doubleValue
+                itemList.append(item)
             }
             
+            let sortedItemList = itemList.sort {
+                $0.0.updateTime > $0.1.updateTime
+            }
+            self.delegate.showItemList(sortedItemList)
+            
+            // 存入数据库
+            try! self.realm.write {
+                self.realm.add(sortedItemList, update: true)
+            }
         }
+
     }
     
     private func loadItemListWithPredicate(predicate: ItemStatusPredicate) {

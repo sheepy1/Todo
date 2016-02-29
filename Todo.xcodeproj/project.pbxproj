@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2078D2BD1C841F04008F73B3 /* SimpleRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2078D2BC1C841F04008F73B3 /* SimpleRefreshControl.swift */; };
+		2078D2BF1C841F60008F73B3 /* DelayFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2078D2BE1C841F60008F73B3 /* DelayFunction.swift */; };
 		2096A1D11C81C84900EC871E /* ItemStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2096A1D01C81C84900EC871E /* ItemStatusController.swift */; };
 		20AD454E1C7E0CF400253FF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD454D1C7E0CF400253FF4 /* AppDelegate.swift */; };
 		20AD45531C7E0CF400253FF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20AD45511C7E0CF400253FF4 /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2078D2BC1C841F04008F73B3 /* SimpleRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleRefreshControl.swift; sourceTree = "<group>"; };
+		2078D2BE1C841F60008F73B3 /* DelayFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelayFunction.swift; sourceTree = "<group>"; };
 		2096A1D01C81C84900EC871E /* ItemStatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStatusController.swift; sourceTree = "<group>"; };
 		20AD454A1C7E0CF400253FF4 /* Todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20AD454D1C7E0CF400253FF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 				20E0C64F1C7F452D0011BB19 /* ItemStatusEnums.swift */,
 				20AD45711C7E0D5D00253FF4 /* ConstantStructs.swift */,
 				20CF450B1C804284004DDF82 /* DelegateProtocols.swift */,
+				2078D2BC1C841F04008F73B3 /* SimpleRefreshControl.swift */,
+				2078D2BE1C841F60008F73B3 /* DelayFunction.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -358,6 +364,8 @@
 				20AD454E1C7E0CF400253FF4 /* AppDelegate.swift in Sources */,
 				20AD45721C7E0D5D00253FF4 /* ConstantStructs.swift in Sources */,
 				2096A1D11C81C84900EC871E /* ItemStatusController.swift in Sources */,
+				2078D2BD1C841F04008F73B3 /* SimpleRefreshControl.swift in Sources */,
+				2078D2BF1C841F60008F73B3 /* DelayFunction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,6 +31,11 @@ class ItemListController: UITableViewController {
         tableView.tableHeaderView = UIView(frame: CGRect(origin: CGPointZero, size: CGSize(width: 0, height: 0.1)))
         
         manager.loadAllItemList()
+        
+        refreshControl = SimpleRefreshControl { [weak self] in
+            self?.itemList = []
+            self?.manager.reloadItemList()
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -170,20 +175,20 @@ extension ItemListController: ItemUIDelegate {
 
 // MARK: - Error handler
 extension ItemListController: ErrorHandler {
-    func handleError(error: NSError) {
-        let alertController = UIAlertController(title: error.localizedDescription, message: Alert.Suggestion, preferredStyle: .Alert)
-        presentViewController(alertController, animated: true) {
-            self.delay(seconds: 1) {
-                alertController.dismissViewControllerAnimated(true, completion: nil)
-            }
-        }
+    func handleHTTPError(error: NSError) {
+        alertWithTitle(error.localizedDescription, message: AlertMessage.HTTPSuggestion)
     }
     
-    func delay(seconds seconds: Double, completion:()->()) {
-        let invokeTime = dispatch_time(DISPATCH_TIME_NOW, Int64( Double(NSEC_PER_SEC) * seconds ))
-        
-        dispatch_after(invokeTime, dispatch_get_main_queue()) {
-            completion()
+    func handleDataError() {
+        alertWithTitle(nil, message: AlertMessage.DataSuggestion)
+    }
+    
+    private func alertWithTitle(title: String?, message: String?) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        presentViewController(alertController, animated: true) {
+            delay(seconds: 1) {
+                alertController.dismissViewControllerAnimated(true, completion: nil)
+            }
         }
     }
 }

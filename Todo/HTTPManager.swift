@@ -53,7 +53,7 @@ class HTTPManager {
         
         let task = session.dataTaskWithRequest(request) {data, response, error in
             if let error = error {
-                self.errorHandler.handleError(error)
+                self.errorHandler.handleHTTPError(error)
             }
             
             if let data = data {
@@ -71,6 +71,7 @@ class HTTPManager {
                     // 打印错误信息
                     if let errorInfo = ResponseInfo.ErrorCodeMapper[code] {
                         print(errorInfo)
+                        self.errorHandler.handleDataError()
                     } else {
                         print("Unknown error.")
                     }

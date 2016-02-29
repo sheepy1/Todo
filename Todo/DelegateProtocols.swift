@@ -14,7 +14,8 @@ protocol ViewModelType {
 }
 
 protocol ErrorHandler: class {
-    func handleError(error: NSError)
+    func handleHTTPError(error: NSError)
+    func handleDataError()
 }
 
 protocol ItemUIDelegate: class {

@@ -27,6 +27,7 @@ class ItemCell: UITableViewCell, ViewModelType {
         backgroundColor = status?.backgroundColor
     }
     
+    // 处理时间戳
     func timeStringWithTimestamp(timestamp: Double) -> String {
         var dateString = ""
         let now = NSDate()
