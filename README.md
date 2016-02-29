@@ -13,11 +13,5 @@ Todo 是一个 iOS 平台的备忘录应用，事项按更新时间排序，支�
 
 ![删除事项](https://github.com/sheepy1/Todo/raw/master/Gif/delete_item.gif)&nbsp;
 
-![筛选事项](https://github.com/sheepy1/Todo/raw/master/Gif/select_item_status.gif)&nbsp;
-
-![离线查看](https://github.com/sheepy1/Todo/raw/master/Gif/local_query.gif)&nbsp;
-
-![离线编辑](https://github.com/sheepy1/Todo/raw/master/Gif/loacal_update.gif)&nbsp;
-
-![离线完成](https://github.com/sheepy1/Todo/raw/master/Gif/local_finish.gif)&nbsp;
+![筛选事项](https://github.com/sheepy1/Todo/raw/master/Gif/select_item_status.gif)&nbsp;![离线完成](https://github.com/sheepy1/Todo/raw/master/Gif/local_finish.gif)&nbsp;
 
