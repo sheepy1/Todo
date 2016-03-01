@@ -89,3 +89,9 @@ struct UpdateTime {
     static let Yesterday = "昨天"
     static let TheDayBeforeYesterday = "前天"
 }
+
+struct DateFormat {
+    static let ComparableDate = "yyMMdd"
+    static let Date = "MM/dd"
+    static let Time = "HH:mm"
+}

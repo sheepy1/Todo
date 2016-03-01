@@ -34,7 +34,7 @@ class ItemCell: UITableViewCell, ViewModelType {
         let date = NSDate(timeIntervalSince1970: timestamp)
 
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyMMdd"
+        dateFormatter.dateFormat = DateFormat.ComparableDate
         let nowInt = Int(dateFormatter.stringFromDate(now))
         let dateInt = Int(dateFormatter.stringFromDate(date))
         switch nowInt! - dateInt! {
@@ -45,10 +45,10 @@ class ItemCell: UITableViewCell, ViewModelType {
         case 2:
             dateString = UpdateTime.TheDayBeforeYesterday
         default:
-            dateFormatter.dateFormat = "MM/dd"
+            dateFormatter.dateFormat = DateFormat.Date
             dateString = dateFormatter.stringFromDate(date)
         }
-        dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.dateFormat = DateFormat.Time
         return dateString + " \(dateFormatter.stringFromDate(date))"
     }
     
